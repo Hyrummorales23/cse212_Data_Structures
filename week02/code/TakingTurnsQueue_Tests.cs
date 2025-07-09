@@ -11,11 +11,12 @@ public class TakingTurnsQueueTests
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3) and
     // run until the queue is empty
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
-    
+
     // Defect(s) Found: 
 
     // - GetNextPerson() did not requeue people with infinite turns (turns <= 0).
     // - Finite turns were not decremented correctly.
+    //Person Enque method was adding persons to the front instead of the Back
     public void TestTakingTurnsQueue_FiniteRepetition()
     {
         var bob = new Person("Bob", 2);
